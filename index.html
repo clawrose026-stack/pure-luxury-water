@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FLOW — Water That Keeps Up</title>
+    <title>FLOW | 100% Refreshing. Pure Science.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --cyan: #00d4ff;
-            --cyan-dark: #00a8cc;
-            --ocean: #0066cc;
-            --deep: #003d7a;
-            --aqua: #00f5d4;
-            --white: #ffffff;
-            --dark: #0a1628;
-            --gray: #f0f4f8;
+            --glacial: #F2F6F9;
+            --ocean: #1E2A78;
+            --refresh: #F5A623;
+            --white: #FFFFFF;
+            --light-gray: #C9D3DC;
+            --mid-gray: #6B7C8F;
+            --silver: #D9DEE5;
+            --chrome: #AEB8C2;
         }
 
         * {
@@ -30,27 +30,24 @@
         }
 
         body {
-            font-family: 'Archivo', sans-serif;
-            background: var(--white);
-            color: var(--dark);
-            line-height: 1.5;
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            background: var(--glacial);
+            color: var(--ocean);
+            line-height: 1.6;
         }
 
         /* Header */
         header {
+            background: var(--ocean);
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
             z-index: 1000;
-            border-bottom: 2px solid var(--cyan);
         }
 
         .header-inner {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px 40px;
             display: flex;
@@ -59,16 +56,12 @@
         }
 
         .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--cyan-dark);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--white);
             text-decoration: none;
-            letter-spacing: -2px;
-        }
-
-        .logo span {
-            color: var(--aqua);
+            letter-spacing: 4px;
         }
 
         nav {
@@ -77,45 +70,52 @@
         }
 
         nav a {
-            font-size: 14px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
             font-weight: 600;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: var(--dark);
+            color: var(--white);
             text-decoration: none;
-            letter-spacing: 1px;
             transition: color 0.3s;
         }
 
         nav a:hover {
-            color: var(--cyan);
+            color: var(--refresh);
         }
 
         /* Hero */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, var(--cyan) 0%, var(--ocean) 50%, var(--deep) 100%);
+            background: linear-gradient(135deg, var(--ocean) 0%, #3A54D6 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             position: relative;
-            overflow: hidden;
+            padding-top: 80px;
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            right: -50%;
-            bottom: -50%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
-            animation: pulse 4s ease-in-out infinite;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 40%);
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.8; }
+        .wave-pattern {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100'%3E%3Cpath fill='%23F2F6F9' d='M0,60 C240,100 480,20 720,60 C960,100 1200,20 1440,60 L1440,100 L0,100 Z'/%3E%3C/svg%3E");
+            background-size: cover;
         }
 
         .hero-content {
@@ -125,63 +125,71 @@
             max-width: 900px;
         }
 
-        .hero h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(56px, 10vw, 120px);
-            font-weight: 700;
+        .hero-badge {
+            display: inline-block;
+            background: var(--refresh);
             color: var(--white);
-            letter-spacing: -4px;
-            margin-bottom: 24px;
-            line-height: 0.9;
-            text-shadow: 0 0 40px rgba(0, 212, 255, 0.5);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 10px 24px;
+            border-radius: 999px;
+            margin-bottom: 32px;
         }
 
-        .hero-subtitle {
-            font-size: 24px;
-            font-weight: 600;
-            color: var(--aqua);
-            margin-bottom: 16px;
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(48px, 8vw, 80px);
+            font-weight: 800;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
-            letter-spacing: 4px;
+            color: var(--white);
+            margin-bottom: 24px;
+            line-height: 1.1;
         }
 
         .hero-tagline {
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 48px;
-            font-weight: 400;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn {
             display: inline-block;
-            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
             font-weight: 700;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            padding: 20px 48px;
+            padding: 16px 32px;
             text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.4s;
-            border: none;
+            border-radius: 999px;
+            transition: all 0.3s;
             cursor: pointer;
+            border: none;
         }
 
         .btn-primary {
-            background: var(--white);
-            color: var(--ocean);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            background: var(--refresh);
+            color: var(--white);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
         }
 
         .btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
         }
 
         .btn-secondary {
             background: transparent;
+            border: 2px solid var(--white);
             color: var(--white);
-            border: 3px solid var(--white);
-            margin-left: 20px;
+            margin-left: 16px;
         }
 
         .btn-secondary:hover {
@@ -189,70 +197,62 @@
             color: var(--ocean);
         }
 
-        /* Wave Divider */
-        .wave {
-            background: var(--white);
-            height: 100px;
-            position: relative;
-        }
-
-        .wave::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: var(--white);
-            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-        }
-
-        /* Products Section */
-        .products-section {
-            padding: 80px 40px;
-            background: var(--white);
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            padding: 96px 40px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .section-tag {
-            text-align: center;
-            font-size: 14px;
-            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            color: var(--cyan);
+            color: var(--refresh);
             margin-bottom: 16px;
         }
 
         .section-title {
-            text-align: center;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(36px, 5vw, 56px);
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(32px, 5vw, 48px);
             font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
             margin-bottom: 16px;
-            letter-spacing: -2px;
         }
 
         .section-subtitle {
-            text-align: center;
-            font-size: 18px;
-            color: #666;
+            font-size: 16px;
+            color: var(--mid-gray);
             max-width: 600px;
-            margin: 0 auto 60px;
+            margin: 0 auto;
+        }
+
+        /* Products */
+        .products-section {
+            background: var(--glacial);
+            padding-bottom: 96px;
         }
 
         .products-grid {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 40px;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 24px;
         }
 
         .product-card {
-            background: var(--gray);
-            border-radius: 24px;
+            background: var(--white);
+            border: 1px solid #E3EAF0;
+            border-radius: 20px;
             padding: 40px 30px;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(30,42,120,0.08);
             transition: all 0.4s;
             position: relative;
             overflow: hidden;
@@ -265,153 +265,179 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--cyan), var(--aqua));
+            background: var(--silver);
         }
 
         .product-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 30px 60px rgba(0, 102, 204, 0.15);
-        }
-
-        .product-card.featured {
-            background: linear-gradient(135deg, var(--cyan) 0%, var(--ocean) 100%);
-            color: var(--white);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(30,42,120,0.12);
         }
 
         .product-card.featured::before {
-            background: var(--white);
+            background: var(--refresh);
         }
 
-        .product-emoji {
-            font-size: 64px;
-            margin-bottom: 20px;
-            display: block;
+        .product-image {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, var(--silver) 0%, var(--glacial) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        .product-card.featured .product-image {
+            background: linear-gradient(135deg, var(--refresh) 0%, #ffb84d 100%);
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: var(--refresh);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 999px;
+            margin-bottom: 16px;
         }
 
         .product-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 24px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
             font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
             margin-bottom: 8px;
-            letter-spacing: -1px;
         }
 
         .product-card p {
             font-size: 14px;
-            opacity: 0.8;
+            color: var(--mid-gray);
             margin-bottom: 4px;
         }
 
-        .product-card .price {
-            font-size: 32px;
+        .product-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
             font-weight: 700;
-            margin: 20px 0;
             color: var(--ocean);
-        }
-
-        .product-card.featured .price {
-            color: var(--white);
+            margin: 20px 0;
         }
 
         .product-btn {
             display: inline-block;
-            padding: 12px 32px;
-            background: var(--dark);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 14px 28px;
+            background: var(--ocean);
             color: var(--white);
             text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 2px;
-            border-radius: 30px;
+            border-radius: 999px;
             transition: all 0.3s;
         }
 
-        .product-card.featured .product-btn {
-            background: var(--white);
-            color: var(--ocean);
-        }
-
         .product-btn:hover {
-            transform: scale(1.05);
+            background: var(--refresh);
         }
 
         /* Why Section */
         .why-section {
-            padding: 100px 40px;
-            background: linear-gradient(180deg, var(--gray) 0%, var(--white) 100%);
+            background: var(--white);
+            padding-bottom: 96px;
         }
 
         .why-grid {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 40px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
+            gap: 24px;
         }
 
         .why-card {
-            background: var(--white);
-            border-radius: 24px;
+            background: var(--glacial);
+            border-radius: 20px;
             padding: 48px;
-            box-shadow: 0 10px 40px rgba(0, 102, 204, 0.08);
             transition: all 0.4s;
         }
 
         .why-card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 20px 60px rgba(0, 102, 204, 0.12);
+            box-shadow: 0 10px 30px rgba(30,42,120,0.08);
         }
 
-        .why-number {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 64px;
-            font-weight: 700;
-            color: var(--cyan);
-            line-height: 1;
-            margin-bottom: 16px;
+        .why-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border: 2px solid var(--silver);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 24px;
         }
 
         .why-card h3 {
-            font-size: 24px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
             font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
             margin-bottom: 12px;
         }
 
         .why-card p {
-            font-size: 16px;
-            color: #666;
+            font-size: 15px;
+            color: var(--mid-gray);
             line-height: 1.6;
         }
 
         /* Corporate Section */
         .corporate-section {
-            padding: 100px 40px;
-            background: linear-gradient(135deg, var(--deep) 0%, var(--ocean) 100%);
-            color: var(--white);
+            background: var(--ocean);
+            padding: 96px 40px;
             text-align: center;
+            position: relative;
         }
 
-        .corporate-section h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(36px, 5vw, 56px);
-            font-weight: 700;
-            margin-bottom: 24px;
-            letter-spacing: -2px;
+        .corporate-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: repeating-linear-gradient(90deg, var(--silver) 0px, var(--silver) 20px, transparent 20px, transparent 40px);
         }
 
-        .corporate-section p {
-            font-size: 20px;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto 48px;
+        .corporate-section .section-tag {
+            color: var(--refresh);
+        }
+
+        .corporate-section .section-title {
+            color: var(--white);
+        }
+
+        .corporate-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .corporate-features {
             display: flex;
             justify-content: center;
-            gap: 80px;
-            margin-bottom: 48px;
+            gap: 60px;
+            margin: 60px 0;
             flex-wrap: wrap;
         }
 
@@ -420,21 +446,30 @@
         }
 
         .corporate-feature .icon {
-            font-size: 48px;
-            margin-bottom: 12px;
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--silver);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 16px;
         }
 
         .corporate-feature .label {
-            font-size: 14px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
             font-weight: 600;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            opacity: 0.9;
+            color: var(--white);
         }
 
         /* Footer */
         footer {
-            background: var(--dark);
+            background: var(--ocean);
             color: var(--white);
             padding: 80px 40px 40px;
         }
@@ -448,25 +483,27 @@
         }
 
         .footer-brand {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--cyan);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 4px;
+            color: var(--white);
             margin-bottom: 16px;
         }
 
         .footer-tagline {
-            font-size: 16px;
-            opacity: 0.7;
+            font-size: 15px;
+            color: var(--light-gray);
             line-height: 1.6;
         }
 
         .footer h5 {
-            font-size: 14px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
             font-weight: 700;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--cyan);
+            color: var(--refresh);
             margin-bottom: 24px;
         }
 
@@ -479,14 +516,14 @@
         }
 
         .footer a {
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--light-gray);
             text-decoration: none;
             font-size: 14px;
             transition: color 0.3s;
         }
 
         .footer a:hover {
-            color: var(--cyan);
+            color: var(--refresh);
         }
 
         .footer-bottom {
@@ -502,8 +539,8 @@
         }
 
         .footer-bottom p {
-            font-size: 14px;
-            opacity: 0.6;
+            font-size: 13px;
+            color: var(--light-gray);
         }
 
         /* Responsive */
@@ -524,7 +561,8 @@
         @media (max-width: 640px) {
             .header-inner {
                 flex-direction: column;
-                gap: 20px;
+                gap: 16px;
+                padding: 16px 20px;
             }
 
             nav {
@@ -532,13 +570,12 @@
             }
 
             .hero h1 {
-                font-size: 48px;
-                letter-spacing: -2px;
+                font-size: 36px;
             }
 
             .btn-secondary {
                 margin-left: 0;
-                margin-top: 16px;
+                margin-top: 12px;
             }
 
             .products-grid {
@@ -547,6 +584,10 @@
 
             .corporate-features {
                 gap: 40px;
+            }
+
+            .why-card {
+                padding: 32px;
             }
 
             .footer-content {
@@ -565,7 +606,7 @@
     <!-- Header -->
     <header>
         <div class="header-inner">
-            <a href="#" class="logo">FLOW<span>.</span></a>
+            <a href="#" class="logo">FLOW</a>
             <nav>
                 <a href="#products">Products</a>
                 <a href="#why">Why Flow</a>
@@ -578,56 +619,59 @@
     <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
-            <p class="hero-subtitle">This Is Your Edge</p>
-            <h1>WATER THAT<br>KEEPS UP</h1>
-            <p class="hero-tagline">You are 60% water. The other 40% is hustle, grind, and making moves.<br>Don't let basic water hold you back.</p>
-            <a href="#products" class="btn btn-primary">Get Flow</a>
-            <a href="#corporate" class="btn btn-secondary">Business</a>
+            <div class="hero-badge">100% Refreshing</div>
+            <h1>Pure Science.<br>Natural Energy.</h1>
+            <p class="hero-tagline">Hydration powered by nature. Aluminum cans that keep your water crisp, cold, and infinitely recyclable.</p>
+            <a href="#products" class="btn btn-primary">Shop Now</a>
+            <a href="#corporate" class="btn btn-secondary">Business Solutions</a>
         </div>
+        <div class="wave-pattern"></div>
     </section>
-
-    <div class="wave"></div>
 
     <!-- Products -->
     <section id="products" class="products-section">
-        <p class="section-tag">The Lineup</p>
-        <h2 class="section-title">Choose Your Fuel</h2>
-        <p class="section-subtitle">Four ways to stay hydrated. Zero excuses.</p>
+        <div class="section-header">
+            <p class="section-tag">The Collection</p>
+            <h2 class="section-title">Hydration Energy</h2>
+            <p class="section-subtitle">Four ways to stay refreshed. Zero compromises.</p>
+        </div>
 
         <div class="products-grid">
             <div class="product-card featured">
-                <span class="product-emoji">🥤</span>
-                <h3>FLOW Still</h3>
-                <p>Pure. Crisp. On demand.</p>
-                <p>330ml canned</p>
-                <div class="price">R12</div>
+                <div class="product-badge">Best Seller</div>
+                <div class="product-image">💧</div>
+                <h3>Flow Still</h3>
+                <p>Pure spring water</p>
+                <p>330ml aluminum can</p>
+                <div class="product-price">R12</div>
                 <a href="#" class="product-btn">Add to Cart</a>
             </div>
 
             <div class="product-card">
-                <span class="product-emoji">✨</span>
-                <h3>FLOW Spark</h3>
-                <p>Bubbles that hit different.</p>
-                <p>330ml canned</p>
-                <div class="price">R14</div>
+                <div class="product-image">✨</div>
+                <h3>Flow Spark</h3>
+                <p>Carbonated spring water</p>
+                <p>330ml aluminum can</p>
+                <div class="product-price">R14</div>
                 <a href="#" class="product-btn">Add to Cart</a>
             </div>
 
             <div class="product-card">
-                <span class="product-emoji">📦</span>
-                <h3>FLOW Box</h3>
-                <p>For the heavy hitters.</p>
+                <div class="product-image">📦</div>
+                <h3>Flow Box</h3>
+                <p>Family & office sizes</p>
                 <p>5L / 10L / 20L</p>
-                <div class="price">R45+</div>
+                <div class="product-price">R45+</div>
                 <a href="#" class="product-btn">Shop Sizes</a>
             </div>
 
             <div class="product-card">
-                <span class="product-emoji">🚀</span>
-                <h3>FLOW Unlimited</h3>
-                <p>Corporate on autopilot.</p>
-                <p>Refill service</p>
-                <div class="price">Custom</div>
+                <div class="product-badge">Business</div>
+                <div class="product-image">🔄</div>
+                <h3>Flow Unlimited</h3>
+                <p>Corporate refill service</p>
+                <p>On-demand delivery</p>
+                <div class="product-price">Custom</div>
                 <a href="#" class="product-btn">Get Quote</a>
             </div>
         </div>
@@ -635,49 +679,54 @@
 
     <!-- Why Flow -->
     <section id="why" class="why-section">
-        <p class="section-tag">Why Flow</p>
-        <h2 class="section-title">The Difference</h2>
-        <p class="section-subtitle">Regular water keeps you alive. Flow keeps you going.</p>
+        <div class="section-header">
+            <p class="section-tag">Pure Science</p>
+            <h2 class="section-title">Why Aluminum</h2>
+            <p class="section-subtitle">The smartest way to hydrate. Better for you. Better for the planet.</p>
+        </div>
 
         <div class="why-grid">
             <div class="why-card">
-                <div class="why-number">01</div>
-                <h3>Aluminum Only</h3>
-                <p>Infinitely recyclable. Cools faster. Blocks light. No plastic guilt. Just pure performance.</p>
+                <div class="why-icon">♻️</div>
+                <h3>Infinitely Recyclable</h3>
+                <p>Aluminum can be recycled forever without losing quality. 75% of all aluminum ever produced is still in use today.</p>
             </div>
 
             <div class="why-card">
-                <div class="why-number">02</div>
-                <h3>Pure Source</h3>
-                <p>Sourced from pristine South African springs. Filtered. Tested. Perfected. Nothing added, nothing removed.</p>
+                <div class="why-icon">❄️</div>
+                <h3>Stays Colder</h3>
+                <p>Aluminum chills 2x faster than plastic or glass. Your water stays crisp and refreshing, even on the hottest days.</p>
             </div>
 
             <div class="why-card">
-                <div class="why-number">03</div>
-                <h3>Always Cold</h3>
-                <p>Aluminum chills 2x faster than plastic. Grab it. Crack it. Feel the cold hit. That's the good stuff.</p>
+                <div class="why-icon">☀️</div>
+                <h3>Blocks UV Light</h3>
+                <p>Unlike plastic bottles, aluminum completely blocks light. Your water stays pure, fresh, and protected.</p>
             </div>
 
             <div class="why-card">
-                <div class="why-number">04</div>
-                <h3>Zero Compromise</h3>
-                <p>No BPA. No plastic taste. No excuses. Just clean, crisp hydration that works as hard as you do.</p>
+                <div class="why-icon">🌊</div>
+                <h3>Ocean Friendly</h3>
+                <p>No plastic waste. No microplastics. Just pure hydration that doesn't cost the earth.</p>
             </div>
         </div>
     </section>
 
     <!-- Corporate -->
     <section id="corporate" class="corporate-section">
-        <h2>Flow for Business</h2>
-        <p>Offices, gyms, events, hotels — if you have people who need to perform, you need Flow. Custom plans, scheduled delivery, zero hassle.</p>
-        
+        <div class="section-header">
+            <p class="section-tag">Nature Powered</p>
+            <h2 class="section-title">Flow For Business</h2>
+            <p class="section-subtitle">Premium hydration for offices, gyms, hotels, and events. Custom plans. Scheduled delivery. Zero hassle.</p>
+        </div>
+
         <div class="corporate-features">
             <div class="corporate-feature">
                 <div class="icon">⚡</div>
-                <div class="label">24h Delivery</div>
+                <div class="label">24H Delivery</div>
             </div>
             <div class="corporate-feature">
-                <div class="icon">📈</div>
+                <div class="icon">📊</div>
                 <div class="label">Custom Plans</div>
             </div>
             <div class="corporate-feature">
@@ -690,36 +739,36 @@
             </div>
         </div>
 
-        <a href="#" class="btn btn-primary">Talk Business</a>
+        <a href="#" class="btn btn-primary">Request Quote</a>
     </section>
 
     <!-- Footer -->
     <footer id="contact">
         <div class="footer-content">
             <div>
-                <div class="footer-brand">FLOW.</div>
-                <p class="footer-tagline">Water that keeps up with you. No compromises. No excuses. Just pure performance.</p>
+                <div class="footer-brand">FLOW</div>
+                <p class="footer-tagline">100% refreshing hydration in infinitely recyclable aluminum. Pure science. Natural energy. Zero compromises.</p>
             </div>
             <div>
                 <h5>Products</h5>
                 <ul>
-                    <li><a href="#">FLOW Still</a></li>
-                    <li><a href="#">FLOW Spark</a></li>
-                    <li><a href="#">FLOW Box</a></li>
-                    <li><a href="#">FLOW Unlimited</a></li>
+                    <li><a href="#">Flow Still</a></li>
+                    <li><a href="#">Flow Spark</a></li>
+                    <li><a href="#">Flow Box</a></li>
+                    <li><a href="#">Flow Unlimited</a></li>
                 </ul>
             </div>
             <div>
                 <h5>Company</h5>
                 <ul>
-                    <li><a href="#">About</a></li>
+                    <li><a href="#">About Us</a></li>
                     <li><a href="#">Sustainability</a></li>
                     <li><a href="#">Careers</a></li>
                     <li><a href="#">Press</a></li>
                 </ul>
             </div>
             <div>
-                <h5>Connect</h5>
+                <h5>Contact</h5>
                 <ul>
                     <li><a href="mailto:hello@flowwater.co.za">hello@flowwater.co.za</a></li>
                     <li><a href="tel:+27123456789">+27 12 345 6789</a></li>
@@ -728,8 +777,8 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 FLOW Water. All rights reserved.</p>
-            <p style="color: var(--cyan);">Stay hydrated. Stay moving.</p>
+            <p>&copy; 2026 Flow Water. All rights reserved.</p>
+            <p style="color: var(--refresh);">100% Refreshing. Pure Science.</p>
         </div>
     </footer>
 </body>
